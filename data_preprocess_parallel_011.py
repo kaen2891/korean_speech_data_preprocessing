@@ -39,8 +39,6 @@ def label_directory(path1, path2, train_or_val, added_name):
     wavList = [x for x in wavList_tmp if os.path.splitext(x)[1] in wav_exts]
     jsonList = [x for x in jsonList_tmp if os.path.splitext(x)[1] in json_exts]
     print(f'wav len {len(wavList)}, json len {len(jsonList)}')
-    exit()
-    
     Parallel_wavtxtDict = Manager().dict()
     
     Parallel_NoPaired_List = Manager().list()
@@ -263,8 +261,8 @@ if __name__=="__main__":
     args.ssl_save_dir = ssl_save_dir
         
     
-    #label_directory(args.start_dir_train_wav1, args.start_dir_train_txt1, '1.Training', 'formatted') #Training
-    #label_directory(args.start_dir_train_wav2, args.start_dir_train_txt2, '1.Training', 'free') #Training
+    label_directory(args.start_dir_train_wav1, args.start_dir_train_txt1, '1.Training', 'formatted') #Training
+    label_directory(args.start_dir_train_wav2, args.start_dir_train_txt2, '1.Training', 'free') #Training
     
-    #label_directory(args.start_dir_valid_wav1, args.start_dir_valid_txt1, '2.Validation', 'formatted') #Validation
+    label_directory(args.start_dir_valid_wav1, args.start_dir_valid_txt1, '2.Validation', 'formatted') #Validation
     label_directory(args.start_dir_valid_wav2, args.start_dir_valid_txt2, '2.Validation', 'free') #Validation

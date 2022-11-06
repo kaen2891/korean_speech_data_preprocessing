@@ -39,7 +39,6 @@ def label_directory(path1, path2, train_or_val):
     wavList = [x for x in wavList_tmp if os.path.splitext(x)[1] in wav_exts]
     jsonList = [x for x in jsonList_tmp if os.path.splitext(x)[1] in json_exts]
     print(f'wav len {len(wavList)}, json len {len(jsonList)}')
-    exit()
     #Parallel_wavList = Manager().list()
     #Parallel_txtList = Manager().list()
     Parallel_wavtxtDict = Manager().dict()
@@ -276,6 +275,6 @@ if __name__=="__main__":
     args.ssl_save_dir = ssl_save_dir
         
     
-    #label_directory(args.start_dir_train_wav1, args.start_dir_train_txt1, '1.Training') #Training
+    label_directory(args.start_dir_train_wav1, args.start_dir_train_txt1, '1.Training') #Training
     
     label_directory(args.start_dir_valid_wav1, args.start_dir_valid_txt1, '2.Validation') #Validation

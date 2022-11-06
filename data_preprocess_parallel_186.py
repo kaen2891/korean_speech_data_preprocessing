@@ -58,6 +58,8 @@ def label_directory(path1, path2, train_or_val):
     pool.close()
     pool.join()
     
+    
+    
     print(f'Dataset: {args.dataset_name}, Parallel_wavtxtDict: {len(Parallel_wavtxtDict)}, NoPaired_List: {len(Parallel_NoPaired_List)} Parallel_wavReadError_List: {len(Parallel_wavReadError_List)}, Parallel_wavNoSignal_List: {len(Parallel_wavNoSignal_List)}, Parallel_wavStereo_List: {len(Parallel_wavStereo_List)}, Parallel_jsonProb_List: {len(Parallel_jsonProb_List)}, Parallel_wavShort_List: {len(Parallel_wavShort_List)}')
     
     wavList = list(Parallel_wavtxtDict.keys())
